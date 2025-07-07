@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Data Files for PM Map</title>
+</head>
+<body>
+    <h2>Upload AOD (.h5), Meteorology (.nc4), PBLH (.nc), and CPCB (.csv) files</h2>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <p>AOD File (.h5): <input type="file" name="aod_file"></p>
+        <p>Meteorology File (.nc4): <input type="file" name="met_file"></p>
+        <p>PBLH File (.nc): <input type="file" name="pblh_file"></p>
+        <p>CPCB File (.csv) (optional): <input type="file" name="cpcb_file"></p>
+        <input type="submit" value="Upload and Predict">
+    </form>
+
+    {% if plot_url %}
+        <h3>PM Concentration Map:</h3>
+        <img src="{{ plot_url }}" alt="PM Map" width="700">
+        <br><br>
+        <a href="/static/PM_Map_Final.csv" download>Download CSV</a>
+    {% endif %}
+
+</body>
+</html>
