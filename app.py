@@ -29,9 +29,9 @@ def upload_predict():
             return "Missing required files", 400
 
         # Save files
-        aod_path = "/tmp/temp_aod.h5"
-        met_path = "/tmp/temp_met.nc4"
-        pblh_path = "/tmp/temp_pblh.nc"
+        aod_path = "temp_aod.h5"
+        met_path = "temp_met.nc4"
+        pblh_path = "temp_pblh.nc"
 
         aod_file.save(aod_path)
         met_file.save(met_path)
